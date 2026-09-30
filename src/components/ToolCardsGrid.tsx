@@ -89,16 +89,16 @@ export const ToolCardsGrid: React.FC<ToolCardsGridProps> = ({ tools, onSelectToo
           <div
             key={tool.id}
             onClick={() => onSelectTool(tool)}
-            className="group relative flex flex-col justify-between p-6 rounded-2xl bg-white dark:bg-slate-900/90 border border-slate-200/80 dark:border-slate-800/80 hover:border-indigo-500/50 dark:hover:border-indigo-500/50 shadow-sm hover:shadow-xl hover:shadow-indigo-500/5 dark:hover:shadow-black/30 transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+            className="group relative flex flex-col justify-between p-6 rounded-2xl bg-slate-900/80 border border-slate-800/90 hover:border-indigo-500/80 shadow-lg shadow-black/40 hover:shadow-2xl hover:shadow-indigo-500/15 transition-all duration-300 hover:-translate-y-1.5 cursor-pointer backdrop-blur-sm"
           >
             {/* Top row with icon & badge */}
             <div>
               <div className="flex items-start justify-between gap-3 mb-4">
-                <div className={`w-12 h-12 rounded-xl bg-gradient-to-tr ${tool.accentColor} flex items-center justify-center text-white shadow-md shadow-indigo-500/10 group-hover:scale-105 transition-transform duration-200`}>
+                <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${tool.accentColor} flex items-center justify-center text-white shadow-lg shadow-indigo-500/20 group-hover:scale-110 group-hover:rotate-2 transition-all duration-300`}>
                   <ToolIcon name={tool.iconName} className="w-6 h-6" />
                 </div>
                 {tool.badge && (
-                  <span className="px-2.5 py-1 text-[11px] font-bold rounded-full bg-indigo-50 dark:bg-indigo-950/70 text-indigo-600 dark:text-indigo-400 border border-indigo-200/60 dark:border-indigo-800/60">
+                  <span className="px-2.5 py-1 text-[11px] font-bold rounded-full bg-indigo-950/80 text-indigo-400 border border-indigo-800/70 group-hover:border-indigo-500 transition-colors">
                     {tool.badge}
                   </span>
                 )}
@@ -106,31 +106,34 @@ export const ToolCardsGrid: React.FC<ToolCardsGridProps> = ({ tools, onSelectToo
 
               {/* Tool Name & Category */}
               <div className="mb-2">
-                <span className="text-[11px] uppercase font-bold tracking-wider text-slate-400 dark:text-slate-400">
+                <span className="text-[11px] uppercase font-bold tracking-wider text-indigo-400/80">
                   {tool.categoryLabel}
                 </span>
-                <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                <h3 className="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
                   {tool.name}
                 </h3>
               </div>
 
               {/* Description */}
-              <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
+              <p className="text-slate-400 text-sm leading-relaxed mb-4 line-clamp-2">
                 {tool.shortDesc}
               </p>
 
               {/* Sample prompt chip */}
               {tool.samplePrompts[0] && (
-                <div className="p-2.5 rounded-xl bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800 text-xs text-slate-600 dark:text-slate-400 mb-4 line-clamp-1 italic">
+                <div className="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 text-xs text-slate-300 mb-4 line-clamp-1 italic group-hover:border-slate-700 transition-colors">
                   "{tool.samplePrompts[0]}"
                 </div>
               )}
             </div>
 
             {/* Bottom action bar */}
-            <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between text-xs font-semibold text-indigo-600 dark:text-indigo-400 group-hover:text-indigo-500 transition-colors">
-              <span>Launch Studio</span>
-              <div className="w-7 h-7 rounded-lg bg-indigo-50 dark:bg-indigo-950/60 flex items-center justify-center group-hover:translate-x-1 transition-transform duration-200">
+            <div className="pt-3 border-t border-slate-800/80 flex items-center justify-between text-xs font-semibold text-indigo-400 group-hover:text-indigo-300 transition-colors">
+              <span className="flex items-center gap-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                Launch Studio
+              </span>
+              <div className="w-7 h-7 rounded-xl bg-indigo-950/80 border border-indigo-800/60 flex items-center justify-center group-hover:translate-x-1.5 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-200">
                 <ArrowRight className="w-4 h-4" />
               </div>
             </div>

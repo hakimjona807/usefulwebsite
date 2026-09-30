@@ -21,14 +21,14 @@ export default function App() {
   // Navigation tab state
   const [currentTab, setCurrentTab] = useState<NavTab>('home');
 
-  // Dark / Light Theme state
+  // Dark / Light Theme state - defaults to true (Dark mode)
   const [isDark, setIsDark] = useState<boolean>(() => {
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('lifeai_theme');
       if (stored) return stored === 'dark';
-      return window.matchMedia('(prefers-color-scheme: dark)').matches;
+      return true; // Default to dark mode
     }
-    return false;
+    return true;
   });
 
   useEffect(() => {
