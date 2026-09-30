@@ -1,0 +1,6 @@
+{
+  "name": "LifeAI",
+  "description": "LifeAI is the all-in-one modern AI assistant. Learn, create, translate, solve, write, and build with intelligent AI tools.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
